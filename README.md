@@ -138,4 +138,4 @@ vercel --prod
 
 ## 📝 Лицензия
 
-MIT License
+MIT License# CI/CD Pipeline активен! 🚀
