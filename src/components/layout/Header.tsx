@@ -27,7 +27,7 @@ export function Header() {
 
   return (
     <header className="text-gray-600 dark:text-gray-300 body-font bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container mx-auto flex items-center justify-between p-5 md:flex-row">
         {/* Logo */}
         <a 
           className="flex title-font font-medium items-center text-gray-900 dark:text-white mb-4 md:mb-0 cursor-pointer"
