@@ -30,8 +30,8 @@ export function SkillsSection() {
   };
 
   return (
-    <Section id="skills" className="flex-1 py-8">
-      <div className="h-full">
+    <Section id="skills" className="py-16">
+      <div>
         <Heading level={2} className="text-center mb-8">
           {t('skills.title')}
         </Heading>

@@ -10,7 +10,7 @@ export function ContactSection() {
   const { t } = useTranslation();
 
   return (
-    <Section id="contact" className="py-8 bg-gray-50 dark:bg-gray-800/50">
+    <Section id="contact" className="py-16 bg-gray-50 dark:bg-gray-800/50">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         
         {/* Contact Info */}

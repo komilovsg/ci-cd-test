@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Mail, Download, Github, Linkedin, Twitter } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
-import { Stat } from "@/components/sections/Stat";
+import { Stat } from "./Stat";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="flex-1 flex items-center">
+    <section className="min-h-screen flex items-center">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           

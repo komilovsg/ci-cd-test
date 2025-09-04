@@ -8,16 +8,16 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
       <Header />
       
-      {/* Main Content - Single Page Layout */}
-      <div className="h-[calc(100vh-4rem)] flex flex-col">
+      {/* Main Content - Scrollable Layout */}
+      <main>
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
-      </div>
+      </main>
     </div>
   );
 }
