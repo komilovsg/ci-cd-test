@@ -39,7 +39,7 @@ export function Header() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="hidden md:flex md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
           {menuItems.map((item) => (
             <a
               key={item.key}
