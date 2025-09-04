@@ -45,13 +45,8 @@ export function Header() {
       <Container className="px-0">
         <NavbarContent>
           <NavbarBrand>
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SK</span>
-              </div>
-              <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Shakhron
-              </span>
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-lg">SK</span>
             </div>
           </NavbarBrand>
         </NavbarContent>
@@ -74,10 +69,10 @@ export function Header() {
         {/* Desktop Controls */}
         <NavbarContent justify="end" className="hidden md:flex">
           <NavbarItem>
-            <ThemeToggle />
-          </NavbarItem>
-          <NavbarItem>
-            <LanguageToggle />
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
           </NavbarItem>
         </NavbarContent>
 
@@ -103,14 +98,20 @@ export function Header() {
               </NavbarMenuItem>
             ))}
             
-            <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-              <span className="text-sm font-medium">Тема</span>
-              <ThemeToggle />
-            </div>
-            
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">Язык</span>
-              <LanguageToggle />
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-medium">Настройки</span>
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-500">Тема</span>
+                  <ThemeToggle />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-500">Язык</span>
+                  <LanguageToggle />
+                </div>
+              </div>
             </div>
           </div>
         </NavbarMenu>
