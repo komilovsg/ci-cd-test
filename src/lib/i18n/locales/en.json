@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi! I'm",
+    "name": "Shakhron Komilov",
+    "title": "Senior Frontend Developer",
+    "description": "I create modern web applications using React, Next.js and TypeScript. Specialized in performant and scalable solutions.",
+    "cta": "Get in touch",
+    "resume": "Download resume"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Experienced Frontend developer with 5+ years of experience building web applications. Passionate about modern technologies and development best practices.",
+    "experience": "Years Experience",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "view": "View",
+    "code": "Code"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Ready to discuss your project or collaboration opportunities",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "made": "Made with",
+    "love": "love"
+  }
+}

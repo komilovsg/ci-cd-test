@@ -2,7 +2,8 @@
 
 import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider } from "next-themes";
-import { LanguageProvider } from "@/contexts/language-context";
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/lib/i18n';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -10,12 +11,12 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <HeroUIProvider>
-        <LanguageProvider>
+    <I18nextProvider i18n={i18n}>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <HeroUIProvider>
           {children}
-        </LanguageProvider>
-      </HeroUIProvider>
-    </ThemeProvider>
+        </HeroUIProvider>
+      </ThemeProvider>
+    </I18nextProvider>
   );
 }

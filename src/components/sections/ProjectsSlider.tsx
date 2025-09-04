@@ -5,7 +5,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Card, CardBody, Button, Chip } from '@heroui/react';
 import { ExternalLink, Github } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Project } from '@/types';
 
 // Import Swiper styles
 import 'swiper/css';
