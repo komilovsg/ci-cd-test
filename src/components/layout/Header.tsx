@@ -53,7 +53,7 @@ export function Header() {
         </NavbarContent>
 
         {/* Desktop Menu & Controls */}
-        <NavbarContent className="hidden md:flex gap-8" justify="center">
+        <NavbarContent className="hidden md:flex gap-8" justify="end">
           {menuItems.map((item) => (
             <NavbarItem key={item.key}>
               <Button
