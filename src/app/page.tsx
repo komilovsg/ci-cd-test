@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Card, CardBody, CardHeader, Chip, Divider } from "@heroui/react";
 
 export default function Home() {
