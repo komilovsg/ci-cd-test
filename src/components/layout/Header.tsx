@@ -39,7 +39,7 @@ export function Header() {
   return (
     <Navbar 
       onMenuOpenChange={setIsMenuOpen}
-      className="backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700"
+      className="backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700 py-5"
       maxWidth="xl"
     >
       <Container className="px-0">
@@ -52,7 +52,7 @@ export function Header() {
           </NavbarBrand>
         </NavbarContent>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu & Controls */}
         <NavbarContent className="hidden md:flex gap-8" justify="center">
           {menuItems.map((item) => (
             <NavbarItem key={item.key}>
@@ -65,10 +65,8 @@ export function Header() {
               </Button>
             </NavbarItem>
           ))}
-        </NavbarContent>
-
-        {/* Desktop Controls */}
-        <NavbarContent justify="end" className="hidden md:flex">
+          
+          {/* Controls on the right */}
           <NavbarItem>
             <div className="flex items-center gap-4">
               <ThemeToggle />
