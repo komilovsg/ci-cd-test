@@ -17,7 +17,7 @@ export function LanguageToggle() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button variant="light" isIconOnly aria-label="Language selector">
+        <Button variant="light" isIconOnly aria-label="Выбрать язык">
           <Globe size={20} />
         </Button>
       </DropdownTrigger>

@@ -45,6 +45,7 @@ export function Header() {
       <Container className="px-0">
         <NavbarContent>
           <NavbarBrand>
+
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg">SK</span>
             </div>

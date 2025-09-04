@@ -107,6 +107,7 @@ export function ProjectsSlider() {
                       variant="flat"
                       className="bg-white/90 backdrop-blur-sm"
                       onPress={() => window.open(project.liveUrl, '_blank')}
+                      aria-label="Открыть проект"
                     >
                       <ExternalLink size={16} />
                     </Button>
@@ -116,6 +117,7 @@ export function ProjectsSlider() {
                       variant="flat"
                       className="bg-white/90 backdrop-blur-sm"
                       onPress={() => window.open(project.githubUrl, '_blank')}
+                      aria-label="Открыть код проекта"
                     >
                       <Github size={16} />
                     </Button>

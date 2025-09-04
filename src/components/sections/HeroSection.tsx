@@ -2,7 +2,7 @@
 
 import { Button, Avatar } from "@heroui/react";
 import { useTranslation } from 'react-i18next';
-import { Mail, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Download, Github, Linkedin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Stat } from "./Stat";
@@ -61,14 +61,11 @@ export function HeroSection() {
             
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start">
-              <Button isIconOnly variant="light" className="text-gray-600 dark:text-gray-400">
+              <Button isIconOnly variant="light" className="text-gray-600 dark:text-gray-400" aria-label="GitHub профиль">
                 <Github size={24} />
               </Button>
-              <Button isIconOnly variant="light" className="text-gray-600 dark:text-gray-400">
+              <Button isIconOnly variant="light" className="text-gray-600 dark:text-gray-400" aria-label="LinkedIn профиль">
                 <Linkedin size={24} />
-              </Button>
-              <Button isIconOnly variant="light" className="text-gray-600 dark:text-gray-400">
-                <Twitter size={24} />
               </Button>
             </div>
           </div>
