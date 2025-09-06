@@ -3,14 +3,12 @@
 import { useState } from 'react';
 import { Menu, X } from "lucide-react";
 import { useTranslation } from 'react-i18next';
-import { useTheme } from 'next-themes';
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
-  const { theme } = useTheme();
 
   const menuItems = [
     { key: 'about', label: t('nav.about') },
