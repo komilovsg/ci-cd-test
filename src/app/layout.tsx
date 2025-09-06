@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CI/CD Test Project",
-  description: "A modern Next.js project for testing CI/CD pipelines",
+  title: "Портфолио | Portfolio",
+  description: "Современное портфолио разработчика | Modern developer portfolio",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
