@@ -23,10 +23,10 @@ export function LanguageToggle() {
       <Button
         onClick={handleLanguageChange}
         variant="bordered"
-        className="min-w-0 px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        className="min-w-0 px-1 py-1 text-lg font-medium text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         aria-label="Переключить язык"
       >
-        {getLanguageDisplay()}
+        <span className="text-xl">{getLanguageDisplay()}</span>
       </Button>
     </div>
   );
