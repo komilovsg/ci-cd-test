@@ -37,12 +37,6 @@ export function ThemeToggle() {
             )}
           </div>
         </span>
-        
-        {/* Background Icons */}
-        <div className="absolute inset-0 flex items-center justify-between px-2">
-          <Sun size={12} className="text-yellow-500 opacity-60" />
-          <Moon size={12} className="text-blue-400 opacity-60" />
-        </div>
       </button>
     </div>
   );
