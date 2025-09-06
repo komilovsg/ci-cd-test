@@ -26,7 +26,7 @@ export function Header() {
   };
 
   return (
-    <header className="text-purple-800 dark:text-gray-300 body-font bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border-b border-purple-200 dark:border-gray-700 shadow-sm">
+    <header className="text-purple-800 dark:text-gray-300 body-font bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border-b border-purple-200 dark:border-gray-700 shadow-sm" suppressHydrationWarning>
       <div className="container mx-auto flex items-center justify-between p-5 md:flex-row">
         {/* Logo */}
         <a 

@@ -17,13 +17,9 @@ export function ThemeToggle() {
   const handleThemeChange = () => {
     const currentTheme = theme || 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    console.log('Current theme:', currentTheme, 'Switching to:', newTheme);
     setTheme(newTheme);
     setStoreTheme(newTheme);
   };
-
-  // Debug info
-  console.log('ThemeToggle render - current theme:', theme, 'mounted:', mounted);
 
   if (!mounted) {
     return (
@@ -43,7 +39,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2" suppressHydrationWarning>
       <button
         onClick={handleThemeChange}
         className="relative inline-flex h-8 w-16 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500  border-2 border-transparent"
