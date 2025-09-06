@@ -15,12 +15,11 @@ export function LanguageToggle() {
   };
 
   const getLanguageDisplay = () => {
-    return language === 'ru' ? '🇷🇺 Русский' : '🇺🇸 English';
+    return language === 'ru' ? '🇷🇺' : '🇺🇸';
   };
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-gray-500 dark:text-gray-400">Язык</span>
       <Button
         onClick={handleLanguageChange}
         variant="bordered"
