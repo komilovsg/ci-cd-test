@@ -40,7 +40,7 @@ export function ContactSection() {
         
         {/* Technologies Used */}
         <div className="text-center">
-          <h3 className="font-semibold mb-4">Технологии проекта</h3>
+          <h3 className="font-semibold mb-4">{t('footer.technologies')}</h3>
           <div className="flex flex-wrap gap-2 justify-center">
             <Chip color="primary" variant="flat">Next.js 15</Chip>
             <Chip color="secondary" variant="flat">TypeScript</Chip>
