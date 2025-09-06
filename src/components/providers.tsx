@@ -12,7 +12,7 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <I18nextProvider i18n={i18n}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <HeroUIProvider>
           {children}
         </HeroUIProvider>
