@@ -19,7 +19,7 @@ export function ThemeToggle() {
       <span className="text-xs text-gray-500 dark:text-gray-400">Тема</span>
       <button
         onClick={handleThemeChange}
-        className="relative inline-flex h-8 w-16 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="relative inline-flex h-8 w-16 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 border-2 border-transparent"
         aria-label="Переключить тему"
       >
         {/* Toggle Circle */}
