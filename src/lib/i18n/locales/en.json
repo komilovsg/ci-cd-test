@@ -5,14 +5,14 @@
     "projects": "Projects",
     "contact": "Contact",
     "settings": "Settings",
-    "contactMe": "Get in touch"
+    "contactMe": "Send message"
   },
   "hero": {
     "greeting": "Hi! I'm",
     "name": "Shakhron Komilov",
     "title": "Frontend Developer",
     "description": "I create modern web applications using React, Next.js and TypeScript. Specialized in performant and scalable solutions.",
-    "cta": "Get in touch",
+    "cta": "Send email",
     "resume": "Download resume"
   },
   "about": {

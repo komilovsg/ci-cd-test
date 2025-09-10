@@ -2,7 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { Chip } from "@heroui/react";
-import { Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 

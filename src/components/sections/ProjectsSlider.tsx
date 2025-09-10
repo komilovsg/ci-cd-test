@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Card, CardBody, Button, Chip } from '@heroui/react';
@@ -64,6 +65,11 @@ const projects = [
 
 export function ProjectsSlider() {
   const { i18n, t } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState<'ru' | 'en'>('en');
+
+  useEffect(() => {
+    setCurrentLanguage(i18n.language as 'ru' | 'en');
+  }, [i18n.language]);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-5">
@@ -130,7 +136,7 @@ export function ProjectsSlider() {
               <CardBody className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
-                  {project.description[i18n.language as 'ru' | 'en']}
+                  {project.description[currentLanguage]}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4 flex-grow">
