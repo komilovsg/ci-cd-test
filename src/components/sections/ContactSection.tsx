@@ -29,7 +29,7 @@ export function ContactSection() {
             </div>
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <Phone className="text-green-600" size={20} />
-              <span>+992 93 500 50 05</span>
+              <span>+992 944 08 88 87</span>
             </div>
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <MapPin className="text-red-600" size={20} />
@@ -42,11 +42,10 @@ export function ContactSection() {
         <div className="text-center">
           <h3 className="font-semibold mb-4">{t('footer.technologies')}</h3>
           <div className="flex flex-wrap gap-2 justify-center">
-            <Chip color="primary" variant="flat">Next.js 15</Chip>
+            <Chip color="primary" variant="flat">Next.js</Chip>
+            <Chip color="primary" variant="flat">React.js</Chip>
             <Chip color="secondary" variant="flat">TypeScript</Chip>
-            <Chip color="success" variant="flat">Hero UI</Chip>
             <Chip color="warning" variant="flat">Tailwind CSS</Chip>
-            <Chip color="danger" variant="flat">Swiper.js</Chip>
           </div>
         </div>
       </div>
@@ -54,9 +53,10 @@ export function ContactSection() {
       {/* Footer */}
       <div className="text-center mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
         <p className="text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
-          © 2024 Shakhron Komilov. {t('footer.made')} 
-          <Heart size={16} className="text-red-500" fill="currentColor" />
-          {t('footer.love')}
+          © 2024 @komilovsg | All rights reserved.
+          {/* {t('footer.made')}  */}
+          {/* <Heart size={16} className="text-red-500" fill="currentColor" />
+          {t('footer.love')} */}
         </p>
       </div>
     </Section>

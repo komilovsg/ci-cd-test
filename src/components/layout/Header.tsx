@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -8,7 +8,12 @@ import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const menuItems = [
     { key: 'about', label: t('nav.about') },
@@ -20,14 +25,20 @@ export function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Высота фиксированного хедера
+      const elementPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
     setIsMenuOpen(false);
   };
 
 
   return (
-    <header className="text-purple-800 dark:text-gray-300 body-font bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border-b border-purple-200 dark:border-gray-700 shadow-sm" suppressHydrationWarning>
+    <header className="fixed top-0 left-0 right-0 z-50 text-purple-800 dark:text-gray-300 body-font bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border-b border-purple-200 dark:border-gray-700 shadow-sm" suppressHydrationWarning>
       <div className="container mx-auto flex items-center justify-between p-5 md:flex-row">
         {/* Logo */}
         <a 
@@ -41,7 +52,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center">
-          {menuItems.map((item) => (
+          {mounted ? menuItems.map((item) => (
             <a
               key={item.key}
               className="mr-5 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors font-medium"
@@ -49,7 +60,15 @@ export function Header() {
             >
               {item.label}
             </a>
-          ))}
+          )) : (
+            // Fallback для SSR
+            <>
+              <a className="mr-5 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors font-medium">About</a>
+              <a className="mr-5 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors font-medium">Skills</a>
+              <a className="mr-5 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors font-medium">Projects</a>
+              <a className="mr-5 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors font-medium">Contact</a>
+            </>
+          )}
         </nav>
 
         {/* Desktop Controls */}
@@ -72,7 +91,7 @@ export function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-purple-200 dark:border-gray-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {menuItems.map((item) => (
+            {mounted ? menuItems.map((item) => (
               <a
                 key={item.key}
                 className="block px-3 py-2 text-base font-medium text-purple-800 dark:text-gray-300 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors hover:bg-purple-50 dark:hover:bg-gray-800 rounded-lg"
@@ -80,11 +99,21 @@ export function Header() {
               >
                 {item.label}
               </a>
-            ))}
+            )) : (
+              // Fallback для SSR
+              <>
+                <a className="block px-3 py-2 text-base font-medium text-purple-800 dark:text-gray-300 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors hover:bg-purple-50 dark:hover:bg-gray-800 rounded-lg">About</a>
+                <a className="block px-3 py-2 text-base font-medium text-purple-800 dark:text-gray-300 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors hover:bg-purple-50 dark:hover:bg-gray-800 rounded-lg">Skills</a>
+                <a className="block px-3 py-2 text-base font-medium text-purple-800 dark:text-gray-300 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors hover:bg-purple-50 dark:hover:bg-gray-800 rounded-lg">Projects</a>
+                <a className="block px-3 py-2 text-base font-medium text-purple-800 dark:text-gray-300 hover:text-purple-600 dark:hover:text-blue-400 cursor-pointer transition-colors hover:bg-purple-50 dark:hover:bg-gray-800 rounded-lg">Contact</a>
+              </>
+            )}
             
             <div className="pt-4 border-t border-purple-200 dark:border-gray-700">
               <div className="flex items-center justify-between px-3 py-2">
-                <span className="text-sm font-medium text-purple-800 dark:text-gray-300">Настройки</span>
+                <span className="text-sm font-medium text-purple-800 dark:text-gray-300">
+                  {mounted ? t('nav.settings') : 'Settings'}
+                </span>
               </div>
               <div className="flex items-center justify-between px-3 py-2">
                 <ThemeToggle />

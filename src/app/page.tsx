@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       
       {/* Main Content - Scrollable Layout */}
-      <main>
+      <main className="pt-20">
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />

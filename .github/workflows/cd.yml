@@ -1,4 +1,4 @@
-name: CD
+name: CD - Deploy
 
 on:
   push:
@@ -9,6 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    needs: [] # No dependencies on other jobs
     
     steps:
     - name: Checkout code
@@ -22,7 +23,13 @@ jobs:
         
     - name: Install dependencies
       run: yarn install --frozen-lockfile
+        
+    - name: Run linter
+      run: yarn lint
       
+    - name: Run type check
+      run: yarn type-check
+        
     - name: Build application
       run: yarn build
       

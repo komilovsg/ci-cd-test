@@ -9,7 +9,7 @@ export function ProjectsSection() {
   const { t } = useTranslation();
 
   return (
-    <Section className="py-16 space-y-6">
+    <Section id="projects" className="py-16 space-y-6">
       <Heading level={2} className="text-center">
         {t('projects.title')}
       </Heading>

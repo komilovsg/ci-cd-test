@@ -11,21 +11,24 @@ export function SkillsSection() {
   const skills = {
     frontend: [
       { name: 'React/Next.js', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'Vue.js', level: 80 }
+      { name: 'TypeScript', level: 95 },
+      { name: 'Tailwind CSS', level: 95 },
+      { name: 'SCSS', level: 90 },
+      { name: 'JavaScript', level: 90 }
     ],
     backend: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Python', level: 75 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MongoDB', level: 70 }
+      { name: 'Node.js/Express', level: 85 },
+      { name: 'Supabase', level: 75 },
+      { name: 'PHP', level: 30 },
+      { name: 'Python', level: 30 },
+      { name: 'Postman', level: 80 }
     ],
     tools: [
-      { name: 'Git/GitHub', level: 90 },
-      { name: 'Docker', level: 75 },
-      { name: 'AWS', level: 70 },
-      { name: 'CI/CD', level: 85 }
+      { name: 'Git/GitHub', level: 95 },
+      { name: 'CI/CD', level: 85 },
+      { name: 'Docker', level: 65 },
+      { name: 'VS Code', level: 90 },
+      { name: 'REST API', level: 90 }
     ]
   };
 

@@ -14,51 +14,51 @@ import 'swiper/css/pagination';
 const projects = [
   {
     id: 1,
-    title: 'E-commerce Platform',
+    title: 'FLY.TJ',
     description: {
-      ru: 'Современная платформа электронной коммерции с Next.js и Stripe',
-      en: 'Modern e-commerce platform built with Next.js and Stripe'
+      ru: 'Официальный сайт авиакомпании FLY.TJ с системой бронирования билетов',
+      en: 'Official website of FLY.TJ airline with ticket booking system'
     },
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Stripe'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/example/project1'
+    image: '/projects/flytj.png',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'API Integration'],
+    liveUrl: 'https://fly.tj/',
+    githubUrl: null
   },
   {
     id: 2,
-    title: 'Task Management App',
+    title: 'Business FLY.TJ',
     description: {
-      ru: 'Приложение для управления задачами с реальным временем обновлений',
-      en: 'Task management application with real-time updates'
+      ru: 'B2B платформа для корпоративных клиентов авиакомпании',
+      en: 'B2B platform for corporate clients of the airline'
     },
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/example/project2'
+    image: '/projects/busnessflytj.png',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'API Integration'],
+    liveUrl: 'https://business.fly.tj/',
+    githubUrl: null
   },
   {
     id: 3,
-    title: 'Analytics Dashboard',
+    title: 'Zinda.tj',
     description: {
-      ru: 'Интерактивная панель аналитики с красивыми графиками',
-      en: 'Interactive analytics dashboard with beautiful charts'
+      ru: 'Информационный портал с новостями и аналитикой',
+      en: 'Information portal with news and analytics'
     },
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
-    technologies: ['Vue.js', 'D3.js', 'Python', 'FastAPI'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/example/project3'
+    image: '/projects/zindatj.png',
+    technologies: ['Next.js', 'TypeScript', 'SCSS', 'Mailer'],
+    liveUrl: 'https://zinda.tj/',
+    githubUrl: null
   },
   {
     id: 4,
-    title: 'Mobile Banking App',
+    title: 'Anbor.tj',
     description: {
-      ru: 'Мобильное банковское приложение с безопасными транзакциями',
-      en: 'Mobile banking application with secure transactions'
+      ru: 'ERP система для управления бизнесом и складским учетом',
+      en: 'ERP system for business management and warehouse accounting'
     },
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&h=300&fit=crop',
-    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'JWT'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/example/project4'
+    image: '/projects/anbortj.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Mailer'],
+    liveUrl: 'https://anbor.tj/',
+    githubUrl: null
   }
 ];
 
@@ -66,7 +66,7 @@ export function ProjectsSlider() {
   const { i18n, t } = useTranslation();
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
+    <div className="w-full max-w-6xl mx-auto px-4 py-5">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
@@ -92,7 +92,7 @@ export function ProjectsSlider() {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Card className="h-full hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+            <Card className="h-[500px] hover:shadow-xl rounded-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex flex-col">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={project.image}
@@ -111,27 +111,29 @@ export function ProjectsSlider() {
                     >
                       <ExternalLink size={16} />
                     </Button>
-                    <Button
-                      isIconOnly
-                      size="sm"
-                      variant="flat"
-                      className="bg-white/90 backdrop-blur-sm"
-                      onPress={() => window.open(project.githubUrl, '_blank')}
-                      aria-label="Открыть код проекта"
-                    >
-                      <Github size={16} />
-                    </Button>
+                    {project.githubUrl && (
+                      <Button
+                        isIconOnly
+                        size="sm"
+                        variant="flat"
+                        className="bg-white/90 backdrop-blur-sm"
+                        onPress={() => project.githubUrl && window.open(project.githubUrl, '_blank')}
+                        aria-label="Открыть код проекта"
+                      >
+                        <Github size={16} />
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
               
-              <CardBody className="p-6">
+              <CardBody className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description[i18n.language as 'ru' | 'en']}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 flex-grow">
                   {project.technologies.map((tech) => (
                     <Chip
                       key={tech}
@@ -145,26 +147,28 @@ export function ProjectsSlider() {
                   ))}
                 </div>
                 
-                <div className="flex gap-2">
+                <div className="flex gap-2 mt-auto">
                   <Button
                     size="sm"
                     color="primary"
                     variant="flat"
                     startContent={<ExternalLink size={14} />}
                     onPress={() => window.open(project.liveUrl, '_blank')}
-                    className="flex-1"
+                    className={project.githubUrl ? "flex-1" : "w-full"}
                   >
                     {t('projects.view')}
                   </Button>
-                  <Button
-                    size="sm"
-                    variant="bordered"
-                    startContent={<Github size={14} />}
-                    onPress={() => window.open(project.githubUrl, '_blank')}
-                    className="flex-1"
-                  >
-                    {t('projects.code')}
-                  </Button>
+                  {project.githubUrl && (
+                    <Button
+                      size="sm"
+                      variant="bordered"
+                      startContent={<Github size={14} />}
+                      onPress={() => project.githubUrl && window.open(project.githubUrl, '_blank')}
+                      className="flex-1"
+                    >
+                      {t('projects.code')}
+                    </Button>
+                  )}
                 </div>
               </CardBody>
             </Card>
