@@ -10,7 +10,7 @@
   "hero": {
     "greeting": "Hi! I'm",
     "name": "Shakhron Komilov",
-    "title": "Senior Frontend Developer",
+    "title": "Frontend Developer",
     "description": "I create modern web applications using React, Next.js and TypeScript. Specialized in performant and scalable solutions.",
     "cta": "Get in touch",
     "resume": "Download resume"
