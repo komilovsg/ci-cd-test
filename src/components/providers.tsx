@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { I18nextProvider } from 'react-i18next';
 import { useEffect } from 'react';
 import i18n from '@/lib/i18n';
+import { ModalProvider } from '@/contexts/ModalContext';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -30,8 +31,10 @@ export function Providers({ children }: ProvidersProps) {
         disableTransitionOnChange={false}
       >
         <HeroUIProvider>
-          <ThemeLogger />
-          {children}
+          <ModalProvider>
+            <ThemeLogger />
+            {children}
+          </ModalProvider>
         </HeroUIProvider>
       </ThemeProvider>
     </I18nextProvider>

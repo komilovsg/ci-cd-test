@@ -1,15 +1,17 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { useModal } from "@/contexts/ModalContext";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { t } = useTranslation();
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     setMounted(true);
@@ -33,6 +35,11 @@ export function Header() {
         behavior: 'smooth'
       });
     }
+    setIsMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    openContactModal();
     setIsMenuOpen(false);
   };
 
@@ -73,6 +80,13 @@ export function Header() {
 
         {/* Desktop Controls */}
         <div className="hidden md:flex items-center gap-4">
+          <button
+            onClick={handleContactClick}
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium"
+          >
+            <MessageCircle className="w-4 h-4" />
+            {mounted ? t('nav.contactMe') : 'Get in touch'}
+          </button>
           <ThemeToggle />
           <LanguageToggle />
         </div>
@@ -109,6 +123,17 @@ export function Header() {
               </>
             )}
             
+            {/* Contact Button */}
+            <div className="pt-4 border-t border-purple-200 dark:border-gray-700">
+              <button
+                onClick={handleContactClick}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium mb-4"
+              >
+                <MessageCircle className="w-5 h-5" />
+                {mounted ? t('nav.contactMe') : 'Get in touch'}
+              </button>
+            </div>
+            
             <div className="pt-4 border-t border-purple-200 dark:border-gray-700">
               <div className="flex items-center justify-between px-3 py-2">
                 <span className="text-sm font-medium text-purple-800 dark:text-gray-300">
@@ -123,6 +148,7 @@ export function Header() {
           </div>
         </div>
       )}
+      
     </header>
   );
 }
