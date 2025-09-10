@@ -14,8 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Портфолио | Portfolio",
-  description: "Современное портфолио разработчика | Modern developer portfolio",
+  title: "Шахрон Комилов - Frontend разработчик | Shakhron Komilov - Frontend Developer",
+  description: "Портфолио Frontend разработчика. React, Next.js, TypeScript. Создаю современные веб-приложения. | Frontend Developer Portfolio. React, Next.js, TypeScript. Building modern web applications.",
+  keywords: ["портфолио", "frontend", "разработчик", "react", "nextjs", "typescript", "portfolio", "developer"],
+  authors: [{ name: "Шахрон Комилов", url: "https://github.com/komilovsg" }],
+  openGraph: {
+    title: "Шахрон Комилов - Frontend разработчик",
+    description: "Портфолио Frontend разработчика. React, Next.js, TypeScript.",
+    type: "website",
+    locale: "ru_RU",
+    alternateLocale: "en_US",
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
